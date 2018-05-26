@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Promaster-Org Maintenance Tracker</title>
+    <link rel="stylesheet" type="text/css" href="css/Styles.css">
+	<script src="Js/JSValidate.js" type="text/javascript"></script>
+	<script src=" http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<div id="container">
+    <div id="header">
+        <img src="images/logo.png" id="logo">
+        <p>Promaster-Org Maintenance Tracker</p>
+    </div>
+    <div id="section">
+            <div id="left_nav">
+                <div class="dashboard">Admin Dashboad</div>
+                <div class="btn_dashboard">View All Your Requests</div>
+				<div class="btn_dashboard" onClick="return getFilter()">Make Request</div>
+				<div class="btn_dropdown">
+				<div class="filter_requests">Maintenance Request</div>
+				<div class="filter_requests">Repair Request</div>
+				</div>
+                <div class="btn_space"><img src="images/usr_services.png" alt="user services" style="margin:4% 0%;"></div>
+            </div>
+            <div id="right_nav">
+                <div class="right_nav_top">
+                    <form name="frm_search" action="#search.php" method="POST">
+                        <input type="search" placeholder="Enter Search Keyword..." class="search" required>
+                        <input type="submit" value="Search" class="btn_search">
+                    </form>
+                        <p style="margin:3% 1%; float:right;">Welcome <span style="color:aqua">promaster2018@gmail.com
+                        </span> | <a href="index.html">Logout?</a></p>
+                </div>
+                <div class="right_nav_content">
+                    <br><br>
+                        <p style="text-align: center; font-size: 36px;margin-top:20%;">Welcome User</p>
+                        <p style="font-size: 22px;">As a User, you are authorized to:</p>
+                        <ol>
+                            <li>Create an Account and Log In</li>
+                            <li>Make maintenance or repairs request</li>
+                            <li>View all your requests</li>
+                        </ol>
+                </div>
+            </div>
+        </div>
+    <div id="footer">
+        <p>&copy;<script>document.write(getCurrentYear());</script> Promaster-Org</p>
+    </div>
+</div>
+<body>
+</body>
