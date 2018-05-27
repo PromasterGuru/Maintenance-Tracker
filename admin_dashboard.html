@@ -15,19 +15,36 @@
     <div id="section">
             <div id="left_nav">
                 <div class="dashboard">Admin Dashboad</div>
-                <div class="btn_dashboard">View All Requests</div>
+                <div class="btn_dashboard" onClick="return requestData()">View All Requests</div>
                 <div class="btn_dashboard" onClick="return getFilter()">Filter Requests</div>
                     <div class="btn_dropdown">
-						<div class="filter_requests">Filter By Date</div>
-						<div class="filter_requests">Filter By User</div>
-						<div class="filter_requests">Filter By Type</div>
-						<div class="filter_requests">Filter By Application</div>
-						<div class="filter_requests">View Approved Requests</div>
-						<div class="filter_requests">View Rejected Requests</div>
-						<div class="filter_requests">View Resolved Requests</div>
-						<div class="filter_requests">View Pending Requests</div>
+						<div class="filter_requests">
+                            <form>
+                                <table cellpadding="5">
+                                    <tr>
+                                        <td><input type="checkbox">Approved</td>
+                                        <td><input type="checkbox">Rejected</td>
+                                        <td><input type="checkbox">Pending</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox">By Date</td>
+                                        <td><input type="checkbox">By Client</td>
+                                        <td><input type="checkbox">By Project</td>
+                                    </tr>
+                                      	<td><input type="checkbox">Resolved</td>
+										<td><input type="checkbox">Type</td>
+										<td></td>
+									</tr>
+									<tr>
+                                        <td colspan="3" style="text-align:center;">
+                                            <input type="submit" value="Filter Requests" class="btn_filter" onClick="return requestData()">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
                     </div>
-                <div class="btn_space"><img src="images/services.png"  alt="services" style="padding-bottom:2%;"></div>
+                <div class="btn_space"><img src="images/services.png"></div>
             </div>
             <div id="right_nav">
                 <div class="right_nav_top">
@@ -62,12 +79,16 @@
                         </span> | <span style="color:darkblue; cursor: pointer"><a href="index.html">Logout?</a></span></p>
                 </div>
                     <table id="contents_tb" border="1" cellpadding="5">
-                        <tr><th  colspan="7">Client Requests</th></tr>
+                        <tr>
+							<th  colspan="7" style="padding:1% 0%;"><span style="color:#990000; font-size:18px;">Client Requests<span>
+							<span style="float:right; margin-right:1%;"><a href="#"><< Prev </a><span style="color:#333333">|</span><a href="#"> Older >></a></span>
+							</th>
+						</tr>
                         <tr>
                              <th>Client ID</th>
-                             <th>Application ID</th>
+                             <th>Project ID</th>
                              <th>Request Type</th>
-                             <th>Client Maintenance or Request Statement</th>
+                             <th>Client Request Description</th>
                              <th>Request Date</th>
                              <th>Approve/Reject</th>
                              <th>Status</th>
@@ -77,13 +98,13 @@
                             <td>101</td>
                             <td>Maintenance</td>
                             <td>Ugrade to the latest version.</td>
-                            <td>05/23/2018</td>
+                            <td>12/23/2017</td>
                             <td><a href="#">Approve? </a> <a href="#">Reject?</a></td>
-                            <td>Not resolved</td>
+                            <td><a href="#">Resolve?</a></td>
                         </tr>
 						<tr>
                             <td>176589</td>
-                            <td>32</td>
+                            <td>032</td>
                             <td>Repair</td>
                             <td>Cant login client accounts.</td>
                             <td>01/20/2018</td>
@@ -95,17 +116,77 @@
                             <td>121</td>
                             <td>Maintenance</td>
                             <td>Slowed performance.</td>
-                            <td>01/25/2018</td>
+                            <td>02/25/2018</td>
                             <td>Approved</td>
-                            <td>Not resolved</td>
+                            <td><a href="#">Resolve?</a></td>
                         </tr>
 						    <tr>
                             <td>198987</td>
                             <td>112</td>
                             <td>Repair</td>
                             <td>Stoped working completely.</td>
-                            <td>01/23/2018</td>
+                            <td>03/23/2018</td>
+                            <td><a href="#">Approve? </a> <a href="#">Reject?</a></td>
+                            <td><a href="#">Resolve?</a></td>
+                        </tr>
+						    </tr>
+						    <tr>
+                            <td>121807</td>
+                            <td>012</td>
+                            <td>Repair</td>
+                            <td>Application not working on Firefox.</td>
+                            <td>04/25/2018</td>
+                            <td>Approved</td>
+                            <td>Resolved</td>
+                        </tr>
+						                        </tr>
+						    <tr>
+                            <td>109877</td>
+                            <td>115</td>
+                            <td>Maintenance</td>
+                            <td>Publishing the web application.</td>
+                            <td>04/26/2018</td>
+                            <td>Approved</td>
+                            <td><a href="#">Resolve?</a></td>
+                        </tr>
+						                        </tr>
+						    <tr>
+                            <td>198997</td>
+                            <td>110</td>
+                            <td>Maintenance</td>
+                            <td>Bugs found</td>
+                            <td>05/22/2018</td>
+                            <td>Approved</td>
+                            <td><a href="#">Resolve?</a></td>
+                        </tr>
+						                        </tr>
+						    <tr>
+                            <td>198000</td>
+                            <td>115</td>
+                            <td>Maintenance</td>
+                            <td>Not loading correctly completely.</td>
+                            <td>05/23/2018</td>
                             <td>Rejected</td>
+                            <td>Resolved</td>
+                        </tr>
+						</tr>
+						    <tr>
+                            <td>108887</td>
+                            <td>117</td>
+                            <td>Repair</td>
+                            <td>Remove some components.</td>
+                            <td>05/25/2018</td>
+                            <td>Rejected</td>
+                            <td>Resolved</td>
+                        </tr>
+						</tr>
+						    <tr>
+                            <td>208767</td>
+                            <td>197</td>
+                            <td>Maintenance</td>
+                            <td>Add notification feature.</td>
+                            <td>05/26/2018</td>
+                            <td>Approved</td>
                             <td>Resolved</td>
                         </tr>
                     </table>

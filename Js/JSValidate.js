@@ -72,11 +72,11 @@ function loginUser(){
     var pass = document.loginform.password.value;
     if(name.length>0){
         if(pass.length>0){
-            if(name === "promaster"){
-                alert("welcome admin");
+            if(name === "promaster" && pass === "promaster"){
+                window.open("admin_dashboard.html");
             }
             else{
-                alert("welcome user");
+                window.open("user_dashboard.html");
             }
         }
         else{
@@ -103,6 +103,19 @@ function getCurrentYear(){
 
 //Display filter buttons
 function getFilter(){
-	$(".btn_dropdown").slideToggle("slow");							   
+    $(".btn_dropdown").slideToggle("slow");						   
 }
 
+//Display requests
+function requestData(){
+    $("#filtered_contents").show();
+    $("#post_request").hide();
+    $("#right_nav").hide();
+}
+
+//Post requests
+function postRequest(){
+    $("#post_request").show();
+    $("#filtered_contents").hide();
+    $("#right_nav").hide();
+}
